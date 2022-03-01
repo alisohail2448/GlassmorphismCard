@@ -122,13 +122,15 @@
     height: 100%;
     border: 2px solid rgba(255, 255, 255, .3);
     background: none;
-    color: var(--text-color);
+    color: white;
     outline: none;
     padding: 1.5rem;
     border-radius: 0.75rem;
     z-index: 1;
-  }
-  
+}
+::placeholder{
+    color: rgba(255, 255, 255, .3);
+}
   .contact_form-tag {
     position: absolute;
     top: -0.85rem;
