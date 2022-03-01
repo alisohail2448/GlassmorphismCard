@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Glass Morphism Card</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card" data-tilt>
+            <img src="images/po.jpg" alt="">
+            <h2>Sohail Akhtar Ali</h2>
+            <p>I'm student of Computer Science Engineering & I like to learn Coding </p>
+            <div class="links">
+                <a href="https://www.instagram.com/iam_ali/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/sohail-akhtar-ali-b400a4223" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com/alisohail2448"><i class="fa-brands fa-github" target="_blank"></i></a>
+            </div>
+            <a href="#" class="btn">Message Me</a>
+        </div>
+
+
+        <div class="card2" data-tilt>
+            <h3 class="contact_title">Write me   your project</h3>
+            <div class="contact_content">
+    
+                <form
+                  onsubmit="sendEmail(); reset(); return false;"
+                  action=""
+                  method="POST"
+                  class="contact_form"
+                >
+                  <div class="contact_form-div">
+                    <label for="" class="contact_form-tag">Names</label>
+                    <input
+                      type="text"
+                      id="name"
+                      class="contact_form-input"
+                      placeholder="Insert your Name"
+                    />
+                  </div>
+    
+                  <div class="contact_form-div">
+                    <label for="" class="contact_form-tag">Mail</label>
+                    <input
+                      id="email"
+                      type="email"
+                      class="contact_form-input"
+                      placeholder="Insert your Email"
+                    />
+                  </div>
+    
+                  <div class="contact_form-div contact_form-area">
+                    <label for="" class="contact_form-tag">Project</label>
+                    <textarea
+                      name=""
+                      id="message"
+                      cols="30"
+                      rows="10"
+                      placeholder="Write your project"
+                      class="contact_form-input"
+                    ></textarea>
+                  </div>
+    
+                  <button class="btn">Send Message</button>
+                </form>
+              </div>
+            
+        </div>
+    </div>
+    <script src="vanilla-tilt.js"></script>
+    <script src="script.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    
+    <script>
+      function sendEmail() {
+        Email.send({
+          /*secureToken:"d69c80d6-4dee-4e96-8cb7-bffc4ce59df6 ",*/
+          Host: "smtp.gmail.com",
+          Username: "alisohail2448@gmail.com",
+          Password: "iam@ly2448",
+          To: "sohailakhtar7249@gmail.com",
+          From: document.getElementById("email").value,
+          Subject: "New Contact form from portfolio",
+          Body:
+            "Name: " +
+            document.getElementById("name").value +
+            "<br> Email: " +
+            document.getElementById("email").value +
+            "<br> Message: " +
+            document.getElementById("message").value,
+        }).then((message) => alert("Message Sent Successfully"));
+      }
+    </script>
+</body>
+</html>
